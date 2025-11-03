@@ -19,7 +19,11 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "lint": "sunlint --all --input=src",
     "lint:changed": "sunlint --all --changed-files",
-    "lint:security": "sunlint --security --input=src"
+    "lint:security": "sunlint --security --input=src",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "yarn build && yarn typeorm migration:generate ./src/migrations/AutoMigration -d dist/config/ormconfig.js",
+    "migration:run": "yarn build && yarn typeorm migration:run -d dist/config/ormconfig.js",
+    "nest": "nest"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -28,6 +32,10 @@
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/swagger": "^11.2.1",
     "@nestjs/typeorm": "^11.0.0",
+    "bcrypt": "^6.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
@@ -37,7 +45,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
-    "@nestjs/cli": "^11.0.0",
+    "@nestjs/cli": "^11.0.10",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
     "@sun-asterisk/sunlint": "^1.3.23",

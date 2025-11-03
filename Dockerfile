@@ -13,11 +13,8 @@ RUN yarn install
 # Copy all source code
 COPY . .
 
-# Build the project
-RUN yarn build
-
 # Expose port (NestJS default)
 EXPOSE 3000
 
 # Command for production
-CMD ["yarn", "start:prod"]
+CMD ["yarn", "start:dev"]

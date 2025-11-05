@@ -1,0 +1,14 @@
+{
+  "username_required": "Tên người dùng là bắt buộc",
+  "username_string": "Tên người dùng phải là chuỗi",
+  "username_too_short": "Tên người dùng quá ngắn (tối thiểu {{min}} ký tự)",
+  "username_too_long": "Tên người dùng quá dài (tối đa {{max}} ký tự)",
+  "email_required": "Email là bắt buộc",
+  "email_invalid": "Địa chỉ email không hợp lệ",
+  "email_too_long": "Email quá dài",
+  "email_already_exists": "Email đã được đăng ký",
+  "password_required": "Mật khẩu là bắt buộc",
+  "password_too_short": "Mật khẩu quá ngắn (tối thiểu {{min}} ký tự)",
+  "bio_string": "Bio phải là chuỗi",
+  "image_string": "Image phải là chuỗi"
+}

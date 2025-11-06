@@ -1,0 +1,14 @@
+{
+  "username_required": "Username is required",
+  "username_string": "Username must be a string",
+  "username_too_short": "Username is too short (min {{min}} characters)",
+  "username_too_long": "Username is too long (max {{max}} characters)",
+  "email_required": "Email is required",
+  "email_invalid": "Invalid email address",
+  "email_too_long": "Email is too long",
+  "email_already_exists": "Email already registered",
+  "password_required": "Password is required",
+  "password_too_short": "Password is too short (min {{min}} characters)",
+  "bio_string": "Bio must be a string",
+  "image_string": "Image must be a string"
+}

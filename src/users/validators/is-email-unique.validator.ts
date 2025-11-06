@@ -22,6 +22,6 @@ export class IsEmailUniqueConstraint implements ValidatorConstraintInterface {
   }
 
   defaultMessage(args: ValidationArguments) {
-    return 'Email "$value" already registered';
+    return 'Email already registered';
   }
 }

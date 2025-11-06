@@ -2,7 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ValidationPipe, VersioningType } from '@nestjs/common';
+import { HttpStatus, VersioningType } from '@nestjs/common';
+import { I18nValidationPipe, I18nValidationExceptionFilter } from 'nestjs-i18n';
 import { useContainer } from 'class-validator';
 
 async function bootstrap() {
@@ -15,10 +16,22 @@ async function bootstrap() {
   // Configure global validation
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
   app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: true,
-      forbidNonWhitelisted: true,
+    new I18nValidationPipe({
       transform: true,
+      whitelist: true,
+      forbidUnknownValues: true,
+      stopAtFirstError: false,
+      dismissDefaultMessages: false,
+    }),
+  );
+
+  app.useGlobalFilters(
+    new I18nValidationExceptionFilter({
+      responseBodyFormatter: (_host, _exception, formattedErrors) => ({
+        statusCode: HttpStatus.BAD_REQUEST,
+        message: 'Bad Request',
+        errors: formattedErrors,
+      }),
     }),
   );
 

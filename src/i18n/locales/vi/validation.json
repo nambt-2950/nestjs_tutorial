@@ -10,5 +10,24 @@
   "password_required": "Mật khẩu là bắt buộc",
   "password_too_short": "Mật khẩu quá ngắn (tối thiểu {{min}} ký tự)",
   "bio_string": "Bio phải là chuỗi",
-  "image_string": "Image phải là chuỗi"
+  "image_string": "Image phải là chuỗi",
+
+  "title_required": "Tiêu đề là bắt buộc",
+  "title_string": "Tiêu đề phải là chuỗi",
+  "title_too_short": "Tiêu đề quá ngắn (tối thiểu {{min}} ký tự)",
+  "title_too_long": "Tiêu đề quá dài (tối đa {{max}} ký tự)",
+  "description_required": "Mô tả là bắt buộc",
+  "description_string": "Mô tả phải là chuỗi",
+  "description_too_short": "Mô tả quá ngắn (tối thiểu {{min}} ký tự)",
+  "description_too_long": "Mô tả quá dài (tối đa {{max}} ký tự)",
+  "body_required": "Nội dung là bắt buộc",
+  "body_string": "Nội dung phải là chuỗi",
+  "taglist_array": "Danh sách tag phải là mảng",
+
+  "tag_string": "Thẻ tag phải là chuỗi ký tự",
+  "author_string": "Tên tác giả phải là chuỗi ký tự",
+  "limit_integer": "Giới hạn phải là số nguyên",
+  "limit_positive": "Giới hạn phải lớn hơn 0",
+  "offset_integer": "Offset phải là số nguyên",
+  "offset_min": "Offset phải lớn hơn hoặc bằng 0"
 }

@@ -7,7 +7,7 @@ import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import { plainToInstance } from 'class-transformer';
 import { CreateUserDto } from '../auth/dto/create-user.dto';
-import { USER_CONSTANTS } from '../common/constants/user.constant';
+import { USER_CONSTANTS } from './user.constant';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserResponseDto } from './dto/user-response.dto';
 

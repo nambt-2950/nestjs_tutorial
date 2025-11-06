@@ -10,5 +10,24 @@
   "password_required": "Password is required",
   "password_too_short": "Password is too short (min {{min}} characters)",
   "bio_string": "Bio must be a string",
-  "image_string": "Image must be a string"
+  "image_string": "Image must be a string",
+
+  "title_required": "Title is required",
+  "title_string": "Title must be a string",
+  "title_too_short": "Title is too short (min {{min}} characters)",
+  "title_too_long": "Title is too long (max {{max}} characters)",
+  "description_required": "Description is required",
+  "description_string": "Description must be a string",
+  "description_too_short": "Description is too short (min {{min}} characters)",
+  "description_too_long": "Description is too long (max {{max}} characters)",
+  "body_required": "Body is required",
+  "body_string": "Body must be a string",
+  "taglist_array": "Tag list must be an array",
+
+  "tag_string": "Tag must be a string",
+  "author_string": "Author must be a string",
+  "limit_integer": "Limit must be an integer",
+  "limit_positive": "Limit must be a positive number",
+  "offset_integer": "Offset must be an integer",
+  "offset_min": "Offset must be greater than or equal to 0"
 }

@@ -36,7 +36,7 @@ export class ArticlesController {
   @UseGuards(OptionalAuthGuard)
   @Get(':slug')
   async findOne(@Param('slug') slug: string, @CurrentUser() currentUser?: User) {
-    const article = await this.articlesService.findBySlug(slug);
+    const article = await this.articlesService.findBySlug(slug, ['author', 'tags']);
     return {
       article: this.articlesService.buildArticleResponse(article, currentUser),
     };

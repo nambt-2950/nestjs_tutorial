@@ -1,7 +1,9 @@
 import { Entity, Column, OneToMany, ManyToMany, JoinTable } from 'typeorm';
+import { Exclude } from 'class-transformer';
 import { BaseEntity } from 'src/common/entities/base.entity';
 import { USER_CONSTANTS } from 'src/users/user.constant';
 import { Article } from '../../articles/entities/article.entity';
+import { Comment } from '../../comments/entities/comment.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -12,6 +14,7 @@ export class User extends BaseEntity {
   username: string;
 
   @Column()
+  @Exclude()
   password: string;
 
   @Column({ nullable: true })
@@ -44,4 +47,7 @@ export class User extends BaseEntity {
     inverseJoinColumn: { name: 'articleId' },
   })
   favorites: Article[];
+
+  @OneToMany(() => Comment, (comment) => comment.author)
+  comments: Comment[];
 }

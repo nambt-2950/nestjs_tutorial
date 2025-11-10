@@ -1,0 +1,6 @@
+{
+  "article_not_found": "Article not found",
+  "comment_not_found": "Comment not found",
+  "forbidden_delete_comment": "You are not allowed to delete this comment",
+  "comment_deleted_successfully": "Comment deleted successfully"
+}

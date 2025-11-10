@@ -29,5 +29,10 @@
   "limit_integer": "Giới hạn phải là số nguyên",
   "limit_positive": "Giới hạn phải lớn hơn 0",
   "offset_integer": "Offset phải là số nguyên",
-  "offset_min": "Offset phải lớn hơn hoặc bằng 0"
+  "offset_min": "Offset phải lớn hơn hoặc bằng 0",
+
+  "comment_required": "Nội dung bình luận là bắt buộc",
+  "comment_string": "Nội dung bình luận phải là chuỗi ký tự",
+  "comment_too_short": "Nội dung bình luận quá ngắn",
+  "comment_too_long": "Nội dung bình luận quá dài"
 }

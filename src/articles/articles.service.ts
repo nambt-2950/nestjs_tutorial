@@ -64,10 +64,10 @@ export class ArticlesService {
     return [articles, count];
   }
 
-  async findBySlug(slug: string): Promise<Article> {
+  async findBySlug(slug: string, relations: string[] = []): Promise<Article> {
     const article = await this.articleRepository.findOne({
       where: { slug },
-      relations: ['author', 'tags'],
+      relations,
     });
 
     if (!article) {

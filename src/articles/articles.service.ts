@@ -108,6 +108,52 @@ export class ArticlesService {
     await this.articleRepository.remove(article);
   }
 
+  async favoriteArticle(slug: string, currentUser: User) {
+    const article = await this.findBySlug(slug, ['author', 'favoritedBy']);
+
+    if (!article) {
+      throw new NotFoundException(
+        await this.i18n.t('articles.article_not_found'),
+      );
+    }
+
+    const alreadyFavorited = article.favoritedBy?.some(
+      (u) => u.id === currentUser.id,
+    );
+
+    if (!alreadyFavorited) {
+      article.favoritedBy.push(currentUser);
+      article.favoritesCount = (article.favoritesCount || 0) + 1;
+      await this.articleRepository.save(article);
+    }
+
+    return article;
+  }
+
+  async unfavoriteArticle(slug: string, currentUser: User) {
+    const article = await this.findBySlug(slug, ['author', 'favoritedBy']);
+
+    if (!article) {
+      throw new NotFoundException(
+        await this.i18n.t('articles.article_not_found'),
+      );
+    }
+
+    const wasFavorited = article.favoritedBy?.some(
+      (u) => u.id === currentUser.id,
+    );
+
+    if (wasFavorited) {
+      article.favoritedBy = article.favoritedBy.filter(
+        (u) => u.id !== currentUser.id,
+      );
+      article.favoritesCount = Math.max(0, (article.favoritesCount || 1) - 1);
+      await this.articleRepository.save(article);
+    }
+
+    return article;
+  }
+
   public buildAuthorResponse(user: User, currentUser?: User) {
     return {
       username: user.username,
@@ -126,7 +172,7 @@ export class ArticlesService {
       tagList: article.tags?.map(tag => tag.name) ?? [],
       createdAt: article.createdAt,
       updatedAt: article.updatedAt,
-      favorited: currentUser?.favorites?.some(f => f.id === article.id) ?? false,
+      favorited: !!article.favoritedBy?.some(u => u.id === currentUser?.id),
       favoritesCount: article.favoritesCount,
       author: this.buildAuthorResponse(article.author, currentUser),
     };

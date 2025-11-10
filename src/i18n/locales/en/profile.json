@@ -1,3 +1,5 @@
 {
-  "not_found": "Profile not found"
+  "not_found": "Profile not found",
+  "user_not_found": "User not found",
+  "cannot_follow_self": "You cannot follow yourself"
 }

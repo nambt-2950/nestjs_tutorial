@@ -21,7 +21,7 @@
     "lint:changed": "sunlint --all --changed-files",
     "lint:security": "sunlint --security --input=src",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migration:generate": "yarn build && yarn typeorm migration:generate ./src/migrations/AutoMigration -d dist/config/ormconfig.js",
+    "migration:generate": "yarn build && yarn typeorm migration:generate -d dist/config/ormconfig.js",
     "migration:run": "yarn build && yarn typeorm migration:run -d dist/config/ormconfig.js",
     "nest": "nest"
   },
@@ -45,6 +45,7 @@
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
+    "slugify": "^1.6.6",
     "swagger-ui-express": "^5.0.1",
     "typeorm": "^0.3.27"
   },

@@ -1,6 +1,6 @@
 import { IsEmail, IsOptional, IsString, MinLength, MaxLength } from 'class-validator';
 import { i18nValidationMessage } from 'nestjs-i18n';
-import { USER_CONSTANTS } from 'src/common/constants/user.constant';
+import { USER_CONSTANTS } from 'src/users/user.constant';
 
 export class UpdateUserDto {
   @IsOptional()

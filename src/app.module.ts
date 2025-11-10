@@ -8,6 +8,8 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ProfilesModule } from './profiles/profiles.module';
+import { ArticlesModule } from './articles/articles.module';
+import { TagsModule } from './tags/tags.module';
 import * as path from 'path';
 
 @Module({
@@ -31,6 +33,8 @@ import * as path from 'path';
     AuthModule,
     UsersModule,
     ProfilesModule,
+    ArticlesModule,
+    TagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

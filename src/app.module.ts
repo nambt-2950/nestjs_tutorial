@@ -10,6 +10,7 @@ import { UsersModule } from './users/users.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { ArticlesModule } from './articles/articles.module';
 import { TagsModule } from './tags/tags.module';
+import { CommentsModule } from './comments/comments.module';
 import * as path from 'path';
 
 @Module({
@@ -35,6 +36,7 @@ import * as path from 'path';
     ProfilesModule,
     ArticlesModule,
     TagsModule,
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

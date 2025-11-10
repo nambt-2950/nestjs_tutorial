@@ -1,0 +1,4 @@
+export const COMMENT_CONSTANTS = {
+  BODY_MIN_LENGTH: 1,
+  BODY_MAX_LENGTH: 1000,
+};

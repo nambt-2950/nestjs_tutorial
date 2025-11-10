@@ -29,5 +29,10 @@
   "limit_integer": "Limit must be an integer",
   "limit_positive": "Limit must be a positive number",
   "offset_integer": "Offset must be an integer",
-  "offset_min": "Offset must be greater than or equal to 0"
+  "offset_min": "Offset must be greater than or equal to 0",
+
+  "comment_required": "Comment body is required",
+  "comment_string": "Comment body must be a string",
+  "comment_too_short": "Comment body is too short",
+  "comment_too_long": "Comment body is too long"
 }

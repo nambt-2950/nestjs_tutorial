@@ -1,3 +1,5 @@
 {
-  "not_found": "Không tìm thấy hồ sơ"
+  "not_found": "Không tìm thấy hồ sơ",
+  "user_not_found": "Không tìm thấy người dùng",
+  "cannot_follow_self": "Bạn không thể theo dõi chính mình"
 }

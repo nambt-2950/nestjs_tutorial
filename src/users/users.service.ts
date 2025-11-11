@@ -34,8 +34,18 @@ export class UsersService {
     return this.userRepository.save(user);
   }
 
-  async findByUsername(username: string): Promise<User | null> {
-    return this.userRepository.findOne({ where: { username } });
+  async findByUsername(username: string, relations: string[] = []): Promise<User | null> {
+    return this.userRepository.findOne({
+      where: { username },
+      relations,
+    });
+  }
+
+  async findById(id: number, relations: string[] = []): Promise<User | null> {
+    return this.userRepository.findOne({
+      where: { id },
+      relations,
+    });
   }
 
   async updateUser(id: number, updateUserDto: UpdateUserDto): Promise<User> {
@@ -51,6 +61,10 @@ export class UsersService {
     }
 
     Object.assign(user, updateUserDto);
+    return this.userRepository.save(user);
+  }
+
+  async save(user: User): Promise<User> {
     return this.userRepository.save(user);
   }
 

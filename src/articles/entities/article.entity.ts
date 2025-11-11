@@ -31,8 +31,7 @@ export class Article extends BaseEntity {
   @ManyToOne(() => User, (user) => user.articles, { eager: true })
   author: User;
 
-  @ManyToMany(() => User, user => user.favorites)
-  @JoinTable()
+  @ManyToMany(() => User, (user) => user.favorites)
   favoritedBy: User[];
 
   @ManyToMany(() => Tag, (tag) => tag.articles, { cascade: true })

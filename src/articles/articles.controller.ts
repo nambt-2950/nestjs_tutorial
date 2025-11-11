@@ -77,4 +77,24 @@ export class ArticlesController {
     const message = await this.i18n.t('articles.deleted_success');
     return { message };
   }
+
+  @UseGuards(JwtAuthGuard)
+  @Post(':slug/favorite')
+  async favorite(
+    @Param('slug') slug: string,
+    @CurrentUser() user: User,
+  ) {
+    const article = await this.articlesService.favoriteArticle(slug, user);
+    return this.articlesService.buildArticleResponse(article, user);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Delete(':slug/favorite')
+  async unfavorite(
+    @Param('slug') slug: string,
+    @CurrentUser() user: User,
+  ) {
+    const article = await this.articlesService.unfavoriteArticle(slug, user);
+    return this.articlesService.buildArticleResponse(article, user);
+  }
 }
